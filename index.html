@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- SEO -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
+   <meta name="keywords" content="secure password generator, password generator, generate password, strong password, password strength">
+   <meta name="author" content="Anthony Constant">
+   <meta name="robots" content="index, follow"> <!-- Specify that search engines should index and follow this page -->
+ 
+   <!-- Open Graph meta tags -->
+   <meta property="og:title" content="Secure Password Generator">
+   <meta property="og:description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://example.com/"> <!-- Replace with the actual URL of your website -->
+   <meta property="og:image" content="https://example.com/images/secure-password-generator.png"> <!-- Replace with the URL of an image related to your website -->
+ 
+   <!-- Twitter Card meta tags -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Secure Password Generator">
+   <meta name="twitter:description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
+   <meta name="twitter:image" content="https://example.com/images/secure-password-generator.png"> <!-- Replace with the URL of an image related to your website -->
+
+    <!-- Title -->
+  <title>Anthony Constant | Secure Password Generator</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.webp">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="container text-center my-5">
+    <!-- Header -->
+    <header>
+      <h1 class="mb-4">Secure Password Generator</h1>
+      <p class="lead">Create unique passwords.</p>
+      <div style="height: 40px;"></div> <!-- Add a spacer for spacing -->
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="password-clipboard text-center mb-4">
+        <h5><strong>Password Clipboard:</strong></h5>
+        <h3 class="password-display" id="passwordDisplay"></h3>
+      </div>
+
+      <form id="passwordGeneratorForm" class="form-group">
+        <div class="mb-3">
+          <label for="characterAmountNumber" class="form-label">Password Length (6-64)</label>
+          <div class="character-amount-container">
+            <input type="range" class="form-range" min="6" max="64" value="6" id="characterAmountRange" aria-describedby="characterAmountNumber">
+            <input class="form-control" type="number" min="6" max="64" value="6" id="characterAmountNumber" aria-labelledby="characterAmountRange">
+          </div>
+        </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="includeUppercase" aria-label="Include Uppercase">
+          <label class="form-check-label" for="includeUppercase">Uppercase</label>
+        </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="includeNumbers" aria-label="Include Numbers">
+          <label class="form-check-label" for="includeNumbers">Numbers</label>
+        </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="includeSymbols" aria-label="Include Symbols">
+          <label class="form-check-label" for="includeSymbols">Symbols</label>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Generate Password</button>
+            <button class="btn btn-primary" id="copyButton">Copy to Clipboard</button>
+         </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed-bottom centered-footer">
+      <p class="text-center">
+        <small>
+         Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://anthonyconstant.co.uk/">Anthony Constant</a>
+        </small>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Custom Javascript -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

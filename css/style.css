@@ -1,0 +1,52 @@
+body, .container {
+  background-color: #353535;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.container {
+  padding: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.password-display {
+  background-color: #f2f2f2;
+  color: #333333;
+  padding: 1.5rem;
+  height: 12rem;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.centered-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin: 0 5px;
+}
+
+
