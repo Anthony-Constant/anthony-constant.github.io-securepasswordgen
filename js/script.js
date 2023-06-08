@@ -67,32 +67,32 @@ function initializePasswordGenerator() {
   generateAndDisplayPassword();
 }
 
-// Get the copy button element
+// Copy Password to clipboard
 const copyButton = document.getElementById('copyButton');
+const passwordDisplay = document.getElementById('passwordDisplay');
 
-// Add click event listener to the copy button
 copyButton.addEventListener('click', () => {
-  // Get the password display element
-  const passwordDisplay = document.getElementById('passwordDisplay');
-  
-  // Create a temporary input element
   const tempInput = document.createElement('input');
-  
-  // Set the value of the temporary input element to the password text
   tempInput.value = passwordDisplay.textContent;
-  
-  // Append the temporary input element to the document
   document.body.appendChild(tempInput);
-  
-  // Select the text in the temporary input element
   tempInput.select();
-  
-  // Copy the selected text to the clipboard
   document.execCommand('copy');
-  
-  // Remove the temporary input element
   document.body.removeChild(tempInput);
+
+  copyButton.textContent = 'Copied';
+  copyButton.disabled = true;
+  copyButton.classList.add('btn-success');
+
+  setTimeout(() => {
+    copyButton.textContent = 'Copy Password';
+    copyButton.disabled = false;
+    copyButton.classList.remove('btn-success');
+  }, 2000); // Reset to original state after 2000 milliseconds (2 seconds)
+
   
-  // Show a notification or provide visual feedback to indicate successful copy
-  alert('Password copied to clipboard!');
 });
+
+
+
+
+

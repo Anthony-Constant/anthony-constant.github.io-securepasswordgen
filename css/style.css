@@ -8,6 +8,7 @@ body, .container {
   padding: 3rem;
   border-radius: 1rem;
   display: flex;
+  background-color: #464646;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -26,6 +27,8 @@ body, .container {
   word-break: break-all;
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .social-icons a {
@@ -43,6 +46,7 @@ body, .container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  
 }
 
 .button-container button {
