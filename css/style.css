@@ -4,13 +4,14 @@ body, .container {
 }
 
 .container {
-  padding: 3rem;
+  padding: 4rem 2rem;
   border-radius: 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* adds space between major sections */
 }
+
 
 .password-display {
   background-color: #f2f2f2;
@@ -140,3 +141,56 @@ body, .container {
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #101820;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh; /* enough to cover long pages */
+  background-color: #101820;
+  z-index: -2;
+}
+
+.password-clipboard {
+  margin-bottom: 1rem;
+}
+
+#passwordStrength {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+#characterAmountRange {
+  margin-bottom: 0.5rem;
+}
+
+#characterCount {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.form-check {
+  margin-bottom: 1.25rem !important;
+}
+
+.button-container.single-button {
+  margin-top: 2.5rem;
+}
+
+
+.password-display {
+  max-width: 90vw;
+  width: 500px;
+}
+
