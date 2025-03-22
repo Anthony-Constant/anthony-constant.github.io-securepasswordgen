@@ -15,18 +15,22 @@ body, .container {
 .password-display {
   background-color: #f2f2f2;
   color: #101820;
-  padding: 1.5rem;
-  height: 12rem;
+  padding: 1rem;
+  min-height: 3.5rem;
+  height: auto;
   width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
-  word-break: break-all;
+  word-break: break-word;
+  text-align: center;
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
+  line-height: 1.5;
 }
+
 
 .social-icons a {
   color: white;
@@ -50,4 +54,89 @@ body, .container {
   margin: 0 5px;
 }
 
+#characterCount {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
 
+#vanta-background {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#passwordStrength {
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.weak {
+  color: #ff4d4d;
+}
+
+.medium {
+  color: #ffa500;
+}
+
+.strong {
+  color: #4caf50;
+}
+
+.password-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: rotate(90deg);
+  color: #0dcaf0;
+}
+
+/* Spin animation keyframes */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Class to trigger spin */
+.spin {
+  animation: spin 0.5s ease-in-out;
+}
+.button-container.single-button {
+  justify-content: center;
+}
+
+.button-container.single-button button {
+  margin: 0 auto;
+  font-size: 1.25rem;
+  padding: 0.75rem 2rem;
+}
+
+/* Button success animation */
+.copy-success {
+  animation: pop 0.4s ease;
+  background-color: #198754 !important; /* Bootstrap success green */
+  border-color: #198754 !important;
+  color: #fff !important;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

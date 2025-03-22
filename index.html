@@ -43,6 +43,7 @@
 </head>
 
 <body>
+  <div id="vanta-background">
   <div class="container text-center my-5">
     <!-- Header -->
     <header>
@@ -55,38 +56,50 @@
     <main>
       <div class="password-clipboard text-center mb-4">
         <h5><strong>Password Clipboard</strong></h5>
-        <h3 class="password-display" id="passwordDisplay"></h3>
-      </div>
-
-      <form id="passwordGeneratorForm" class="form-group">
-        <div class="mb-3">
-          <label for="characterAmountNumber" class="form-label">Password Length (6-64)</label>
-          <div class="character-amount-container">
-            <input type="range" class="form-range" min="6" max="64" value="6" id="characterAmountRange" aria-describedby="characterAmountNumber">
-            <input class="form-control" type="number" min="6" max="64" value="6" id="characterAmountNumber" aria-labelledby="characterAmountRange">
-          </div>
+      
+        <div class="password-display-container">
+          <h3 class="password-display" id="passwordDisplay"></h3>
+          <button id="regenerateBtn" class="icon-button" type="button" aria-label="Regenerate Password">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
         </div>
+      
+        <p id="passwordStrength" class="mt-2"></p>
+      
+        <div id="strengthBarContainer">
+          <div id="strengthBar"></div>
+        </div>
+      </div>
+      
 
+      <div class="mb-4">
+        <input type="range" class="form-range" min="6" max="64" value="12" id="characterAmountRange">
+        <p id="characterCount" class="text-center mt-2">12 characters</p>
+      </div>
+      
+
+      <form id="passwordGeneratorForm">
         <div class="form-check mb-3">
           <input type="checkbox" class="form-check-input" id="includeUppercase" aria-label="Include Uppercase">
-          <label class="form-check-label" for="includeUppercase">Uppercase</label>
+          <label class="form-check-label" for="includeUppercase">A-Z</label>
         </div>
-
+      
         <div class="form-check mb-3">
           <input type="checkbox" class="form-check-input" id="includeNumbers" aria-label="Include Numbers">
-          <label class="form-check-label" for="includeNumbers">Numbers</label>
+          <label class="form-check-label" for="includeNumbers">0-9</label>
         </div>
-
+      
         <div class="form-check mb-3">
           <input type="checkbox" class="form-check-input" id="includeSymbols" aria-label="Include Symbols">
-          <label class="form-check-label" for="includeSymbols">Symbols</label>
+          <label class="form-check-label" for="includeSymbols">!@#$%^&*</label>
         </div>
-
-        <div class="button-container">
-            <button type="submit" class="btn btn-primary">Generate Password</button>
-            <button class="btn btn-primary" id="copyButton">Copy to Clipboard</button>
-         </div>
+      
+        <div class="button-container single-button">
+          <button class="btn btn-primary btn-lg px-5" id="copyButton" type="button">Copy Password</button>
+        </div>
+        
       </form>
+      
     </main>
 
     <!-- Footer -->

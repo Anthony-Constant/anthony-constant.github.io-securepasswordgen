@@ -2,15 +2,14 @@ document.addEventListener('DOMContentLoaded', initializePasswordGenerator);
 
 
 function initializePasswordGenerator() {
+  const characterCount = document.getElementById('characterCount');
   const characterAmountRange = document.getElementById('characterAmountRange');
-  const characterAmountNumber = document.getElementById('characterAmountNumber');
   const includeUppercaseElement = document.getElementById('includeUppercase');
   const includeSymbolsElement = document.getElementById('includeSymbols');
   const includeNumbersElement = document.getElementById('includeNumbers');
   const form = document.getElementById('passwordGeneratorForm');
   const passwordDisplay = document.getElementById('passwordDisplay');
 
-  characterAmountNumber.addEventListener('input', syncCharacterAmount);
   characterAmountRange.addEventListener('input', syncCharacterAmount);
 
   form.addEventListener('submit', (e) => {
@@ -18,21 +17,57 @@ function initializePasswordGenerator() {
     generateAndDisplayPassword();
   });
 
+  const regenerateBtn = document.getElementById('regenerateBtn');
+  regenerateBtn.addEventListener('click', () => {
+  const icon = regenerateBtn.querySelector('i');
+  icon.classList.add('spin');
+
+  generateAndDisplayPassword();
+
+  // Remove class after animation so it can repeat
+  setTimeout(() => {
+    icon.classList.remove('spin');
+  }, 500); // match the duration in CSS
+});
+
+
   function syncCharacterAmount(e) {
     const value = e.target.value;
-    characterAmountNumber.value = value;
-    characterAmountRange.value = value;
+    characterCount.textContent = `${value} characters`;
     generateAndDisplayPassword();
   }
-
+  
   function generateAndDisplayPassword() {
-    const characterAmount = characterAmountNumber.value;
+    const characterAmount = characterAmountRange.value;
     const includeUppercase = includeUppercaseElement.checked;
     const includeNumbers = includeNumbersElement.checked;
     const includeSymbols = includeSymbolsElement.checked;
+  
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
     passwordDisplay.innerText = password;
+    characterCount.textContent = `${password.length} characters`;
+  
+    // ✅ Password strength logic
+    const strengthElement = document.getElementById('passwordStrength');
+    let strength = '';
+    let strengthClass = '';
+  
+    if (password.length <= 8) {
+      strength = 'Weak';
+      strengthClass = 'weak';
+    } else if (password.length <= 12) {
+      strength = 'Medium';
+      strengthClass = 'medium';
+    } else {
+      strength = 'Strong';
+      strengthClass = 'strong';
+    }
+  
+    strengthElement.textContent = `Strength: ${strength}`;
+    strengthElement.className = strengthClass;
   }
+  
+  
 
   function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
     let charCodes = LOWERCASE_CHAR_CODES;
@@ -80,23 +115,19 @@ copyButton.addEventListener('click', () => {
   document.execCommand('copy');
   document.body.removeChild(tempInput);
 
-  copyButton.textContent = 'Copied';
-  copyButton.disabled = true;
-  copyButton.classList.add('btn-success');
+  copyButton.textContent = 'Copied! ✅';
+  copyButton.classList.add('copy-success');
 
   setTimeout(() => {
     copyButton.textContent = 'Copy Password';
-    copyButton.disabled = false;
-    copyButton.classList.remove('btn-success');
-  }, 2000); // Reset to original state after 2000 milliseconds (2 seconds)
-
-  
+    copyButton.classList.remove('copy-success');
+  }, 1500);
 });
 
 
 
 if (window.VANTA) window.VANTA.DOTS({
-  el: "html",
+  el: "#vanta-background",
   mouseControls: true,
   touchControls: true,
   gyroControls: false,
