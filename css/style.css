@@ -39,10 +39,30 @@ body, .container {
   margin-right: 10px;
 }
 
-.centered-footer {
-  text-align: center;
-  margin-top: 20px;
+/* Page layout wrapper to push footer down */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+/* Let main container grow, footer stays at bottom */
+.container {
+  flex: 1;
+}
+
+/* Footer remains below content */
+footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #1f2937;
+  border-top: 1px solid #2a3749;
+  width: 100%;
+  margin-top: auto; /* key to stick footer */
+}
+
 
 .button-container {
   display: flex;
@@ -192,5 +212,96 @@ body::after {
 .password-display {
   max-width: 90vw;
   width: 500px;
+}
+
+.tools-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px; /* matches the soft curve in the screenshot */
+  padding: 1.5rem 1rem; /* tighter spacing top/bottom */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  max-width: 800px;
+  margin: 3rem auto 2rem auto;
+}
+
+.tools-section h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.tools-section .btn {
+  background-color: #0d6efd;
+  color: #ffffff;
+  flex-shrink: 0;
+  min-width: 120px; /* smaller width */
+  font-weight: 500;
+  padding: 0.4rem 0.8rem; /* smaller padding */
+  font-size: 0.9rem;       /* slightly smaller text */
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 8px rgba(13, 110, 253, 0.3); /* soft blue glow */
+}
+
+.tools-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(13, 110, 253, 0.4);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Optional: make buttons smaller and cleaner */
+.tools-grid .btn {
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(13, 110, 253, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.tools-grid .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(13, 110, 253, 0.4);
+}
+
+.btn-copy-password {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(13, 110, 253, 0.3);
+  border: none;
+}
+
+.btn-copy-password:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(13, 110, 253, 0.4);
+}
+
+#password-manager-btn {
+  background-color: #ff2e43;
+  border: none;
+  box-shadow: 0 4px 10px rgba(255, 46, 67, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#password-manager-btn:hover {
+  background-color: #e62438;
+  transform: scale(1.05);
 }
 

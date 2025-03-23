@@ -93,22 +93,50 @@
           <input type="checkbox" class="form-check-input" id="includeSymbols" aria-label="Include Symbols">
           <label class="form-check-label" for="includeSymbols">!@#$%^&*</label>
         </div>
-      
-        <div class="button-container single-button">
-          <button class="btn btn-primary btn-lg px-5" id="copyButton" type="button">Copy Password</button>
+
+        <div class="button-row d-flex justify-content-center flex-wrap gap-3 mt-4">
+          <button class="btn btn-copy-password" id="copyButton" type="button">Copy Password</button>
+        
+          <a href="https://online.roboform.com/?rid=QYMbyMD3kQF5RhpywYrfzrQ#signup-enterprise&business-user=new"
+             target="_blank"
+             class="btn btn-danger btn-sm fw-bold d-inline-flex align-items-center gap-2 px-4"
+             id="password-manager-btn">
+            <i class="bi bi-shield-lock-fill"></i>
+            GET A PASSWORD MANAGER
+          </a>
         </div>
         
+        
       </form>
-      
-    </main>
 
-    <footer class="bg-gray-800 text-white py-6 text-center">
-      <p>© 2025 Anthony Constant. All rights reserved.</p>
-      <p class="mt-2">
-        <a href="https://www.linkedin.com/company/anthony-constant/" class="underline" target="_blank">LinkedIn</a> |
-        <a href="https://uk.trustpilot.com/review/anthonyconstant.co.uk" class="underline" target="_blank">Trustpilot Reviews</a>
-      </p>
-    </footer>
+      <!-- Additional Tools Section -->
+      <div class="tools-section mt-5 p-4 rounded shadow-sm">
+        <h4 class="mb-3 text-white fw-semibold text-center">Additional Tools & Security Insights</h4>
+        <div class="tools-grid">
+          <a href="https://anthonyconstant.co.uk/" class="btn">Official Website</a>
+          <a href="https://ip.anthonyconstant.co.uk/" class="btn">What's My IP?</a>
+          <a href="https://interviewkit.anthonyconstant.co.uk/" class="btn">Interview Kit</a>
+          <a href="https://universitykit.anthonyconstant.co.uk/" class="btn">University Kit</a>
+          <a href="https://anthonyconstant.co.uk/blog" class="btn">Blog</a>
+          <a href="https://anthonyconstant.co.uk/contact" class="btn">Contact</a>
+        </div>
+      </div>
+      
+      
+<!-- CLOSE the container and vanta-background before the footer -->
+</main>
+</div> <!-- End of .container -->
+</div> <!-- End of #vanta-background -->
+
+<!-- Footer must be outside the container -->
+<footer class="bg-gray-800 text-white py-6 text-center">
+  <p>© 2025 Anthony Constant. All rights reserved.</p>
+  <p class="mt-2">
+    <a href="https://www.linkedin.com/company/anthony-constant/" class="underline" target="_blank">LinkedIn</a> |
+    <a href="https://uk.trustpilot.com/review/anthonyconstant.co.uk" class="underline" target="_blank">Trustpilot Reviews</a>
+  </p>
+</footer>
+
     
 
   <!-- Custom Javascript -->
