@@ -8,20 +8,9 @@
    <meta name="description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
    <meta name="keywords" content="secure password generator, password generator, generate password, strong password, password strength">
    <meta name="author" content="Anthony Constant">
-   <meta name="robots" content="index, follow"> <!-- Specify that search engines should index and follow this page -->
+   <meta name="robots" content="index, follow"> 
  
-   <!-- Open Graph meta tags -->
-   <meta property="og:title" content="Secure Password Generator">
-   <meta property="og:description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://example.com/"> <!-- Replace with the actual URL of your website -->
-   <meta property="og:image" content="https://example.com/images/secure-password-generator.png"> <!-- Replace with the URL of an image related to your website -->
- 
-   <!-- Twitter Card meta tags -->
-   <meta name="twitter:card" content="summary_large_image">
-   <meta name="twitter:title" content="Secure Password Generator">
-   <meta name="twitter:description" content="Generate secure passwords with the Secure Password Generator. Customize length and include uppercase letters, numbers, and symbols.">
-   <meta name="twitter:image" content="https://example.com/images/secure-password-generator.png"> <!-- Replace with the URL of an image related to your website -->
+
 
     <!-- Title -->
   <title>Anthony Constant | Secure Password Generator</title>
@@ -43,14 +32,24 @@
 </head>
 
 <body>
+  <div class="logo-top">
+    <a href="https://anthonyconstant.co.uk/">
+      <img src="images/Logo-01.png" alt="Anthony Constant Logo" class="logo-img">
+    </a>
+  </div>
   <div id="vanta-background">
   <div class="container text-center my-5">
-    <!-- Header -->
-    <header>
-      <h1 class="mb-4">Secure Password Generator</h1>
-      <p class="lead">Create unique passwords.</p>
-      <div style="height: 40px;"></div> <!-- Add a spacer for spacing -->
-    </header>
+
+
+
+
+      
+  <!-- Header content -->
+  <header>
+    <h1 class="mb-4">Secure Password Generator</h1>
+    <p class="lead">Create unique passwords.</p>
+    <div style="height: 40px;"></div>
+  </header>
 
     <!-- Main Content -->
     <main>
@@ -78,36 +77,35 @@
       </div>
       
 
-      <form id="passwordGeneratorForm">
-        <div class="form-check mb-3">
-          <input type="checkbox" class="form-check-input" id="includeUppercase" aria-label="Include Uppercase">
-          <label class="form-check-label" for="includeUppercase">A-Z</label>
-        </div>
-      
-        <div class="form-check mb-3">
-          <input type="checkbox" class="form-check-input" id="includeNumbers" aria-label="Include Numbers">
-          <label class="form-check-label" for="includeNumbers">0-9</label>
-        </div>
-      
-        <div class="form-check mb-3">
-          <input type="checkbox" class="form-check-input" id="includeSymbols" aria-label="Include Symbols">
-          <label class="form-check-label" for="includeSymbols">!@#$%^&*</label>
-        </div>
+<form id="passwordGeneratorForm">
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input styled-checkbox" id="includeUppercase" aria-label="Include Uppercase">
+    <label class="form-check-label" for="includeUppercase">A-Z</label>
+  </div>
 
-        <div class="button-row d-flex justify-content-center flex-wrap gap-3 mt-4">
-          <button class="btn btn-copy-password" id="copyButton" type="button">Copy Password</button>
-        
-          <a href="https://online.roboform.com/?rid=QYMbyMD3kQF5RhpywYrfzrQ#signup-enterprise&business-user=new"
-             target="_blank"
-             class="btn btn-danger btn-sm fw-bold d-inline-flex align-items-center gap-2 px-4"
-             id="password-manager-btn">
-            <i class="bi bi-shield-lock-fill"></i>
-            GET A PASSWORD MANAGER
-          </a>
-        </div>
-        
-        
-      </form>
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input styled-checkbox" id="includeNumbers" aria-label="Include Numbers">
+    <label class="form-check-label" for="includeNumbers">0-9</label>
+  </div>
+
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input styled-checkbox" id="includeSymbols" aria-label="Include Symbols">
+    <label class="form-check-label" for="includeSymbols">!@#$%^&*</label>
+  </div>
+
+  <div class="button-row d-flex justify-content-center flex-wrap gap-3 mt-4">
+    <button class="btn btn-copy-password" id="copyButton" type="button">Copy Password</button>
+
+    <a href="https://online.roboform.com/?rid=QeOkIG6bwK_JAhNuzCTqQ0I#signup-enterprise&business-user=new"
+       target="_blank"
+       class="btn btn-danger btn-sm fw-bold d-inline-flex align-items-center gap-2 px-4"
+       id="password-manager-btn">
+      <i class="bi bi-shield-lock-fill"></i>
+      GET A PASSWORD MANAGER
+    </a>
+  </div>
+</form>
+
 
       <!-- Additional Tools Section -->
       <div class="tools-section mt-5 p-4 rounded shadow-sm">
