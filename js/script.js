@@ -125,6 +125,24 @@ copyButton.addEventListener('click', () => {
 });
 
 
+  const faqs = document.querySelectorAll('.faq-question');
+
+  faqs.forEach(faq => {
+    faq.addEventListener('click', function () {
+      const parent = faq.parentNode;
+      parent.classList.toggle('active');
+      
+      const answer = parent.querySelector('.faq-answer');
+      if (parent.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+
+
+
 
 if (window.VANTA) window.VANTA.DOTS({
   el: "#vanta-background",

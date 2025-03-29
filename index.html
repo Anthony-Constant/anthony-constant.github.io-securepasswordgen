@@ -46,8 +46,8 @@
       
   <!-- Header content -->
   <header>
-    <h1 class="mb-4">Secure Password Generator</h1>
-    <p class="lead">Create unique passwords.</p>
+    <h1 class="mb-4 main-title">Secure Password Generator</h1>
+    <p class="lead">Create unique passwords to keep your account safe online.</p>
     <div style="height: 40px;"></div>
   </header>
 
@@ -80,17 +80,17 @@
 <form id="passwordGeneratorForm">
   <div class="form-check mb-3">
     <input type="checkbox" class="form-check-input styled-checkbox" id="includeUppercase" aria-label="Include Uppercase">
-    <label class="form-check-label" for="includeUppercase">A-Z</label>
+    <label class="form-check-label" for="includeUppercase">Uppercase</label>
   </div>
 
   <div class="form-check mb-3">
     <input type="checkbox" class="form-check-input styled-checkbox" id="includeNumbers" aria-label="Include Numbers">
-    <label class="form-check-label" for="includeNumbers">0-9</label>
+    <label class="form-check-label" for="includeNumbers">Numbers</label>
   </div>
 
   <div class="form-check mb-3">
     <input type="checkbox" class="form-check-input styled-checkbox" id="includeSymbols" aria-label="Include Symbols">
-    <label class="form-check-label" for="includeSymbols">!@#$%^&*</label>
+    <label class="form-check-label" for="includeSymbols">Symbols</label>
   </div>
 
   <div class="button-row d-flex justify-content-center flex-wrap gap-3 mt-4">
@@ -106,6 +106,101 @@
   </div>
 </form>
 
+<!-- Password Strength Section with Images -->
+<section class="password-strength-section container">
+  <h2 class="password-strength-title">What Makes a Password Strong?</h2>
+
+  <div class="password-strength-grid">
+    <div class="strength-box">
+      <h3 class="box-title">Long</h3>
+      <p>The longer your password, the stronger it is. Aim for at least 12-16 characters.</p>
+    </div>
+
+    <div class="strength-box">
+      <h3 class="box-title">Complex</h3>
+      <p>Mix uppercase letters, numbers, and symbols for enhanced security.</p>
+    </div>
+
+    <div class="strength-box">
+      <h3 class="box-title">Unique</h3>
+      <p>Never reuse passwords. Unique passwords help protect against breaches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section container my-5">
+  <h2 class="faq-title">Password Generator FAQs</h2>
+  <p class="faq-subtitle">Questions about this secure password generator? Answers below!</p>
+
+  <div class="faq-container">
+    <div class="faq">
+      <button class="faq-question">Is this password generator safe?</button>
+      <div class="faq-answer">
+        <p>Yes, this generator uses client-side scripts to generate passwords securely in your browser. No passwords are ever stored or sent elsewhere.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-question">Why should I use a password generator?</button>
+      <div class="faq-answer">
+        <p>A generator ensures your passwords are strong, random, and unique, greatly improving your online security.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-question">Do I need a unique password for every account?</button>
+      <div class="faq-answer">
+        <p>Yes, using a unique password for each account helps prevent a single breach from affecting multiple accounts.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-question">What makes a password strong?</button>
+      <div class="faq-answer">
+        <p>A strong password is long (12-16 characters minimum), complex (including letters, numbers, symbols), and unique (used for one account only).</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-question">Can password generators be hacked?</button>
+      <div class="faq-answer">
+        <p>Secure generators like this one run entirely in your browser without storing or transmitting data, significantly reducing the risk of hacking.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-question">Is there a secure way to store passwords?</button>
+      <div class="faq-answer">
+        <p>Yes, using a trusted password manager is the safest way to securely store and manage your passwords.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Blog Posts -->
+<section class="related-blogs container my-5">
+  <h2 class="blogs-title">Related Blog Posts</h2>
+
+  <div class="blogs-grid">
+    <a href="https://anthonyconstant.co.uk/blog/f/computer-systems-security-fundamentals?blogcategory=Cyber+Security"
+       target="_blank" class="blog-link">
+      Cybersecurity Fundamentals: Part 1
+    </a>
+    
+    <a href="https://anthonyconstant.co.uk/blog/f/computer-systems-security-fundamentals---part-2?blogcategory=Cyber+Security"
+       target="_blank" class="blog-link">
+      Cybersecurity Fundamentals: Part 2
+    </a>
+    
+    <a href="https://anthonyconstant.co.uk/blog/f/introduction-to-cryptography?blogcategory=Cyber+Security"
+       target="_blank" class="blog-link">
+      Introduction to Cryptography
+    </a>
+  </div>
+</section>
+
+
 
       <!-- Additional Tools Section -->
       <div class="tools-section mt-5 p-4 rounded shadow-sm">
@@ -119,6 +214,11 @@
           <a href="https://anthonyconstant.co.uk/contact" class="btn">Contact</a>
         </div>
       </div>
+
+
+
+
+
       
       
 <!-- CLOSE the container and vanta-background before the footer -->
@@ -141,7 +241,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
   <script src="js/script.js"></script>
-
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 
 </html>
