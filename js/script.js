@@ -31,6 +31,41 @@ function initializePasswordGenerator() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+          }
+      });
+  });
+
+  elements.forEach(element => {
+      observer.observe(element);
+  });
+});
+
+const toggleBtn = document.getElementById('toggleVisibility');
+toggleBtn.addEventListener('click', () => {
+  const actual = document.getElementById('passwordActual');
+  const masked = document.getElementById('passwordMasked');
+
+  const isRevealed = actual.style.display !== 'none';
+
+  if (isRevealed) {
+    actual.style.display = 'none';
+    masked.style.display = 'inline';
+    toggleBtn.innerHTML = '<i class="bi bi-eye"></i>';
+  } else {
+    actual.style.display = 'inline';
+    masked.style.display = 'none';
+    toggleBtn.innerHTML = '<i class="bi bi-eye-slash"></i>';
+  }
+});
+
+
   function syncCharacterAmount(e) {
     const value = e.target.value;
     characterCount.textContent = `${value} characters`;
@@ -44,7 +79,10 @@ function initializePasswordGenerator() {
     const includeSymbols = includeSymbolsElement.checked;
   
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
-    passwordDisplay.innerText = password;
+    
+    document.getElementById('passwordActual').textContent = password;
+    document.getElementById('passwordMasked').textContent = '•'.repeat(password.length);
+  
     characterCount.textContent = `${password.length} characters`;
   
     // ✅ Password strength logic
@@ -65,7 +103,12 @@ function initializePasswordGenerator() {
   
     strengthElement.textContent = `Strength: ${strength}`;
     strengthElement.className = strengthClass;
+  
+    // Reset to visible by default
+    document.getElementById('passwordActual').style.display = 'inline';
+    document.getElementById('passwordMasked').style.display = 'none';
   }
+  
   
   
 
@@ -105,11 +148,11 @@ function initializePasswordGenerator() {
 
 // Copy Password to clipboard
 const copyButton = document.getElementById('copyButton');
-const passwordDisplay = document.getElementById('passwordDisplay');
+const passwordActual = document.getElementById('passwordActual');
 
 copyButton.addEventListener('click', () => {
   const tempInput = document.createElement('input');
-  tempInput.value = passwordDisplay.textContent;
+  tempInput.value = passwordActual.textContent; // only copy actual password
   document.body.appendChild(tempInput);
   tempInput.select();
   document.execCommand('copy');
@@ -123,6 +166,7 @@ copyButton.addEventListener('click', () => {
     copyButton.classList.remove('copy-success');
   }, 1500);
 });
+
 
 
   const faqs = document.querySelectorAll('.faq-question');
@@ -143,25 +187,5 @@ copyButton.addEventListener('click', () => {
 
 
 
-
-if (window.VANTA) window.VANTA.DOTS({
-  el: "#vanta-background",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  showLines: false,
-  color: 0x3fddff,
-  color2: 0xff8820,
-  backgroundColor: 0x101820
-})
-
-_strk.push(function() {
-  setVanta()
-  window.edit_page.Event.subscribe( "Page.beforeNewOneFadeIn", setVanta )
-})
 
 

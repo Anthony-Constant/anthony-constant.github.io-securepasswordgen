@@ -1,16 +1,22 @@
-body, .container {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+body {
+  background: linear-gradient(to bottom, #1f2937, #111827);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
+
 .container {
-  padding: 1rem 2rem 4rem 2rem; /* Less space at top */
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem; /* adds space between major sections */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
+
+
 
 @media (max-width: 600px) {
   .logo-img {
@@ -19,6 +25,26 @@ body, .container {
 
   .container {
     padding-top: 2rem;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -76,6 +102,11 @@ body, .container {
 #passwordStrength {
   transition: all 0.3s ease;
   animation: fade-in 0.4s ease-in-out;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 @keyframes fade-in {
@@ -145,18 +176,8 @@ footer a:hover {
   font-weight: 500;
 }
 
-#vanta-background {
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
-#passwordStrength {
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
+
 
 .weak {
   color: #ff4d4d;
@@ -249,10 +270,7 @@ body::after {
   margin-bottom: 1rem;
 }
 
-#passwordStrength {
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
-}
+
 
 
 #characterAmountRange {
@@ -644,3 +662,94 @@ input.styled-checkbox:hover {
   background-color: rgba(13, 202, 240, 0.3);
 }
 
+.main-title::after {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 6px #0dcaf0; }
+  50% { box-shadow: 0 0 18px #ff8820; }
+  100% { box-shadow: 0 0 6px #0dcaf0; }
+}
+
+.password-display.reveal {
+  color: #4caf50;
+}
+
+
+
+@media (max-width: 500px) {
+  .password-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .icon-buttons {
+    justify-content: center;
+  }
+
+  .password-text {
+    text-align: center;
+  }
+}
+
+
+
+.password-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  word-break: break-word;
+  flex: 1; /* allow it to grow and fill space */
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.icon-buttons .icon-button {
+  font-size: 1.4rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.icon-buttons .icon-button {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.password-box {
+  background-color: #f2f2f2;
+  color: #101820;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
+  width: 500px;
+  margin: 0 auto; /* center horizontally */
+  gap: 1rem;
+}
+
+.password-box .icon-button {
+  color: #101820; /* dark text for visibility on light bg */
+  opacity: 0.7;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.password-box .icon-button:hover {
+  color: #0d6efd; /* Bootstrap blue for hover */
+  opacity: 1;
+}
+
+
+.password-box .icon-button i {
+  color: #101820 !important;
+}
+
+.password-box .icon-button:hover i {
+  color: #0d6efd !important;
+}
