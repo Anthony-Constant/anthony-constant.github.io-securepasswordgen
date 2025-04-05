@@ -187,5 +187,28 @@ copyButton.addEventListener('click', () => {
 
 
 
-
+  document.addEventListener("DOMContentLoaded", () => {
+    const taglines = [
+      "Generate secure passwords — 100% client-side.",
+      "Nothing stored. Nothing tracked.",
+      "Your passwords never leave your browser.",
+      "Create strong, private passwords instantly.",
+      "We never see your data — and never will."
+    ];
+  
+    const taglineElement = document.getElementById("tagline");
+    let index = 0;
+  
+    function rotateTagline() {
+      taglineElement.classList.add("fade");
+      setTimeout(() => {
+        index = (index + 1) % taglines.length;
+        taglineElement.textContent = taglines[index];
+        taglineElement.classList.remove("fade");
+      }, 600);
+    }
+  
+    setInterval(rotateTagline, 4000);
+  });
+  
 

@@ -753,3 +753,15 @@ input.styled-checkbox:hover {
 .password-box .icon-button:hover i {
   color: #0d6efd !important;
 }
+
+.animated-tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #ffffff;
+  min-height: 1.5em;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
